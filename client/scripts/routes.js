@@ -17,12 +17,12 @@ export default class RoutesConfig extends Config {
           }
         }
       })
-      .state('tab.send',{
-        url: '/send',
+      .state('tab.contacts',{
+        url: '/contacts',
         views:{
-          'tab-send':{
-            templateUrl: 'client/templates/send.html'
-            // controller:  'ChatsCtrl as chats'
+          'tab-contacts':{
+            templateUrl: 'client/templates/contacts.html',
+            controller:  'ContactsCtrl as contacts'
           }
         }
       });

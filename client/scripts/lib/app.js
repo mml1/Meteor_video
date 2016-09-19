@@ -8,6 +8,7 @@ import Loader from 'angular-ecmascript/module-loader';
 import { Meteor } from 'meteor/meteor';
 
 // Modules
+import ContactsCtrl from '../controllers/contacts.controller';
 import RoutesConfig from '../routes';
 const App = 'Meteor_Video';
 
@@ -18,6 +19,7 @@ Angular.module(App, [
 ]);
 
 new Loader(App)
+	.load(ContactsCtrl)
 	.load(RoutesConfig);
 // Startup
 if (Meteor.isCordova) {
