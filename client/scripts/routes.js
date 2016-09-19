@@ -12,8 +12,8 @@ export default class RoutesConfig extends Config {
         url: '/videos',
         views:{
           'tab-videos':{
-            templateUrl: 'client/templates/video.html'
-            // controller:  'ChatsCtrl as chats'
+            templateUrl: 'client/templates/video.html',
+            controller:  'VideosCtrl as videos'
           }
         }
       })

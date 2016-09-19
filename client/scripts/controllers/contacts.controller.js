@@ -11,8 +11,8 @@ export default class ContactsCtrl extends Controller {
 			}
 		});
 	}
-	// remove(contact){
-	// 	console.log(contact,"in remove")
-	// 	Contacts.remove({_id:contact._id})
-	// }
+	remove(contact){
+		console.log(contact,"in remove")
+		Contacts.remove({_id:contact._id})
+	}
 }

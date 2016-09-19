@@ -4,6 +4,11 @@ import { Contacts } from '../lib/collections';
 
 // Server startup file
 Meteor.startup(function() {
+  if (Contacts.find().count() !== 0) return;
+ 
+  // Will not keep adding the data already there
+  
+  Contacts.remove({});
 	const contacts = [
     {
       name: 'Kate Anderson, DPT',
@@ -16,6 +21,10 @@ Meteor.startup(function() {
     {
       name: 'Sabrina Chen, DPT',
       email: 'schen@therapy.com'
+    },
+    {
+      name: 'Jessica Jones, DPT',
+      email: 'mmlliguicota@gmail.com'
     }
   ];
  
