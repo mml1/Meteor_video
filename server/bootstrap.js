@@ -7,7 +7,6 @@ Meteor.startup(function() {
   if (Contacts.find().count() !== 0) return;
  
   // Will not keep adding the data already there
-  
   Contacts.remove({});
 	const contacts = [
     {
@@ -31,5 +30,20 @@ Meteor.startup(function() {
   contacts.forEach((pt) => {
     Contacts.insert(pt);
   });
- 
 });
+process.env.MAIL_URL = "smtp://postmaster%40@sandboxd8e95a3b1ad54960a21a85f3432fdc21.mailgun.org:d9d6bd1a64ef32c09574f8c57b65e3b2@smtp.mailgun.org:587";
+
+Meteor.methods({
+    sendEmail: function (to, from, subject, text) {
+      console.log("in meteor methods server")
+      check([to, from, subject, text], [String]);
+
+      this.unblock();
+      Email.send({
+        to: to,
+        from: from,
+        subject: subject,
+        text: text
+      });
+    }
+  });

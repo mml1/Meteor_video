@@ -10,9 +10,20 @@ export default class ContactsCtrl extends Controller {
 				return Contacts.find();
 			}
 		});
+
 	}
 	remove(contact){
 		console.log(contact,"in remove")
 		Contacts.remove({_id:contact._id})
 	}
+	submitEmail(contact){
+		console.log("in submitEmail");
+		
+		Meteor.call('sendEmail',
+            'alice@example.com',
+            'bob@example.com',
+            'Hello from Meteor',
+            'This is a test')
+	}
+
 }

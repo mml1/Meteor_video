@@ -6,7 +6,7 @@
 			        type="item-text-wrap">
 				<h2>{{ contact.name }}</h2>
 				<p>{{ contact.email }}</p>
-				<ion-option-button class="button-positive" ng-click="">Send </ion-option-button>
+				<ion-option-button class="button-positive" ng-click="contacts.submitEmail(contact)">Send </ion-option-button>
 				<ion-option-button class="button-assertive" ng-click="contacts.remove(contact)">Delete </ion-option-button>
 			</ion-item>
 		</ion-list>
